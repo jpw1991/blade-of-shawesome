@@ -1,6 +1,8 @@
-# Cheb's ModStub
+# Blade of Shawesome
 
-to do
+The shawesomest Blade of Shawesome to ever grace Valheim.
+
+This mod was commissioned by Discord user: **Shawesome**. If you would like me to create a mod for you, please get in touch.
 
 ## About Me
 
@@ -22,7 +24,7 @@ I'm partnered with [Bisect Hosting](https://bisecthosting.com/chebgonaz) to give
 
 If you would like to report a bug or request a feature, the best way to do it (in order from most preferable to least preferable) is:
 
-a) Create an issue on my [GitHub](https://github.com/jpw1991/chebs-mod-stub).
+a) Create an issue on my [GitHub](https://github.com/jpw1991/blade-of-shawesome).
 
 b) Write to me on [Discord](https://discord.com/invite/EB96ASQ).
 
@@ -42,18 +44,27 @@ A correct installation looks like:
 ```sh
 plugins/
 ├── Translations
-├── chebsmodstub
-├── chebsmodstub.manifest
-├── ChebsModStub.dll
+├── bladeofshawesome
+├── bladeofshawesome.manifest
+├── BladeOfShawesome.dll
 ├── ChebsValheimLibrary.dll
 └── ... other mods ...
 ```
 
 ## Features
 
-Detailed info in the [wiki](https://github.com/jpw1991/chebs-mod-stub/wiki). Here's the short version:
+Detailed info in the [wiki](https://github.com/jpw1991/blade-of-shawesome/wiki). Here's the short version:
 
-- to do
+- Blade of Shawesome
+	+ Crafted weapon.
+	+ Deals 100 slashing damage and 50 lightning damage.
+	+ Can only be made during a thunderstorm.
+	+ One-handed sword.
+- Greatsword of Shawesome
+	+ Crafted weapon.
+	+ Deals 140 slashing damage and 50 lightning damage
+	+ Can only be made during a thunderstorm.
+	+ Two-handed sword.
 
 ### Config
 
@@ -61,15 +72,16 @@ Detailed info in the [wiki](https://github.com/jpw1991/chebs-mod-stub/wiki). Her
 
 Press **F1** to open the mod's configuration panel.
 
-You can also edit the configs manually. Almost everything can be tweaked to your liking. For a complete list of all configuration options, please look [here](https://github.com/jpw1991/chebs-mod-stub/wiki/Configs).
+You can also edit the configs manually. Almost everything can be tweaked to your liking. For a complete list of all configuration options, please look [here](https://github.com/jpw1991/blade-of-shawesome/wiki/Configs).
 
 ## Source
 
-You can find the github [here](https://github.com/jpw1991/chebs-mod-stub).
+You can find the github [here](https://github.com/jpw1991/blade-of-shawesome).
 
 ## Special Thanks
 
-- to do
+- Shawesome for commissioning the mod and being a shawesome guy.
+- [ArsGothica](https://www.artstation.com/arsgothica) for the Blade of Shawesome model and texture.
 
 ## Changelog
 
@@ -78,7 +90,7 @@ You can find the github [here](https://github.com/jpw1991/chebs-mod-stub).
 
  Date | Version | Notes 
 --- | --- | ---
-25/07/2023 | 0.0.1 | First alpha version
+03/08/2023 | 1.0.0 | Release
 
 </details>
 

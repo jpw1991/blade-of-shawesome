@@ -1,4 +1,4 @@
-# Cheb's ModStub
+# Cheb's BladeOfShawesome
 
 Adds throwing weapons to Valheim: Javelins, Shuriken, Throwing Axes.
 
@@ -6,7 +6,7 @@ This mod was commissioned by Discord user Drago. If you would like me to create 
 
 **Video:**
 
-[![Cheb's ModStub Valheim](https://img.youtube.com/vi/6IO74EBhBKE/0.jpg)](https://youtu.be/6IO74EBhBKE "Cheb's ModStub Valheim")
+[![Cheb's BladeOfShawesome Valheim](https://img.youtube.com/vi/6IO74EBhBKE/0.jpg)](https://youtu.be/6IO74EBhBKE "Cheb's BladeOfShawesome Valheim")
 
 ## Alternative Javelin Mods
 
@@ -35,7 +35,7 @@ I'm partnered with [Bisect Hosting](https://bisecthosting.com/chebgonaz) to give
 
 If you would like to report a bug or request a feature, the best way to do it (in order from most preferable to least preferable) is:
 
-a) Create an issue on my [GitHub](https://github.com/jpw1991/chebs-mod-stub).
+a) Create an issue on my [GitHub](https://github.com/jpw1991/blade-of-shawesome).
 
 b) Write to me on [Discord](https://discord.com/invite/EB96ASQ).
 
@@ -55,16 +55,16 @@ A correct installation looks like:
 ```sh
 plugins/
 ├── Translations
-├── chebsmodstub
-├── chebsmodstub.manifest
-├── ChebsModStub.dll
+├── bladeofshawesome
+├── bladeofshawesome.manifest
+├── BladeOfShawesome.dll
 ├── ChebsValheimLibrary.dll
 └── ... other mods ...
 ```
 
 ## Features
 
-Detailed info in the [wiki](https://github.com/jpw1991/chebs-mod-stub/wiki). Here's the short version:
+Detailed info in the [wiki](https://github.com/jpw1991/blade-of-shawesome/wiki). Here's the short version:
 
 - Adds throwing weapons the game:
 	- Javelins
@@ -78,7 +78,7 @@ Detailed info in the [wiki](https://github.com/jpw1991/chebs-mod-stub/wiki). Her
 
 Press **F1** to open the mod's configuration panel.
 
-You can also edit the configs manually. Almost everything can be tweaked to your liking. For a complete list of all configuration options, please look [here](https://github.com/jpw1991/chebs-mod-stub/wiki/Configs).
+You can also edit the configs manually. Almost everything can be tweaked to your liking. For a complete list of all configuration options, please look [here](https://github.com/jpw1991/blade-of-shawesome/wiki/Configs).
 
 **Important:** As of 1.1.0, local player's items dynamically update to reflect config changes so you can test tweaks immediately without having to log out & in again. However, for all items in the world to be updated, logging out & in again is required.
 
@@ -86,13 +86,13 @@ You can also edit the configs manually. Almost everything can be tweaked to your
 
 The following improvements have been noted, but won't be implemented until someone throws me some doubloons for it, or I find myself really bored with nothing to do someday.
 
-- [Right click to aim, like a bow](https://github.com/jpw1991/chebs-mod-stub/issues/1)
-- [Decrease shuriken spread with knife skill increase](https://github.com/jpw1991/chebs-mod-stub/issues/6)
-- [Shuriken auto-equip next weapon once broken](https://github.com/jpw1991/chebs-mod-stub/issues/7)
+- [Right click to aim, like a bow](https://github.com/jpw1991/blade-of-shawesome/issues/1)
+- [Decrease shuriken spread with knife skill increase](https://github.com/jpw1991/blade-of-shawesome/issues/6)
+- [Shuriken auto-equip next weapon once broken](https://github.com/jpw1991/blade-of-shawesome/issues/7)
 
 ## Source
 
-You can find the github [here](https://github.com/jpw1991/chebs-mod-stub).
+You can find the github [here](https://github.com/jpw1991/blade-of-shawesome).
 
 ## Special Thanks
 

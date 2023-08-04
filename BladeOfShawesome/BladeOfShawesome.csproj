@@ -8,8 +8,8 @@
     <ProjectGuid>{DEAF4438-8089-40ED-8175-398E1261D45B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChebsModStub</RootNamespace>
-    <AssemblyName>ChebsModStub</AssemblyName>
+    <RootNamespace>BladeOfShawesome</RootNamespace>
+    <AssemblyName>BladeOfShawesome</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -120,8 +120,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Items\BladeOfShawesomeItem.cs" />
+    <Compile Include="Items\GreatswordOfShawesomeItem.cs" />
+    <Compile Include="Patches\InventoryGuiPatches.cs" />
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
-    <Compile Include="ChebsModStub.cs" />
+    <Compile Include="BasePlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

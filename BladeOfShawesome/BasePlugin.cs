@@ -1,30 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using BepInEx;
 using BepInEx.Configuration;
+using BladeOfShawesome.Items;
 using ChebsValheimLibrary;
 using HarmonyLib;
 using Jotunn;
 using Jotunn.Entities;
 using Jotunn.Managers;
 using Jotunn.Utils;
+using UnityEngine;
 using Paths = BepInEx.Paths;
 
-namespace ChebsModStub
+namespace BladeOfShawesome
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency(Main.ModGuid)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
-    internal class ChebsModStub : BaseUnityPlugin
+    internal class BasePlugin : BaseUnityPlugin
     {
-        public const string PluginGuid = "com.chebgonaz.chebsmodstub";
-        public const string PluginName = "ChebsModStub";
+        public const string PluginGuid = "com.chebgonaz.bladeofshawesome";
+        public const string PluginName = "BladeOfShawesome";
         public const string PluginVersion = "0.0.1";
 
         private const string ConfigFileName = PluginGuid + ".cfg";
         private static readonly string ConfigFileFullPath = Path.Combine(Paths.ConfigPath, ConfigFileName);
 
-        public readonly System.Version ChebsValheimLibraryVersion = new("2.1.2");
+        public readonly System.Version ChebsValheimLibraryVersion = new("2.2.0");
 
         private readonly Harmony harmony = new(PluginGuid);
 
@@ -33,7 +36,8 @@ namespace ChebsModStub
 
         public static CustomLocalization Localization = LocalizationManager.Instance.GetLocalization();
 
-        //public static IronJavelinItem IronJavelin = new();
+        public static BladeOfShawesomeItem BladeOfShawesome = new();
+        public static GreatswordOfShawesomeItem GreatswordOfShawesome = new();
 
         private void Awake()
         {
@@ -53,13 +57,54 @@ namespace ChebsModStub
 
         private void DoOnVanillaPrefabsAvailable()
         {
-            UpdateAllRecipes();
             PrefabManager.OnVanillaPrefabsAvailable -= DoOnVanillaPrefabsAvailable;
+            
+            UpdateAllRecipes();
+            
+            // steal himminafl attack and give it to the swords
+            var himminaflAttack = PrefabManager.Instance.GetPrefab("fx_himminafl_hit");
+            if (himminaflAttack == null)
+            {
+                Logger.LogError("Error: failed to get fx_himminafl_hit prefab");
+                return;
+            }
+
+            var swords = new List<GameObject>()
+            {
+                PrefabManager.Instance.GetPrefab(BladeOfShawesome.ItemName),
+                PrefabManager.Instance.GetPrefab(GreatswordOfShawesome.ItemName)
+            };
+            foreach (var sword in swords)
+            {
+                if (sword == null)
+                {
+                    Logger.LogError("Error: sword is null");
+                    continue;
+                }
+
+                if (!sword.TryGetComponent(out ItemDrop itemDrop))
+                {
+                    Logger.LogError("Error: failed to get sword's item drop");
+                    continue;
+                }
+
+                itemDrop.m_itemData.m_shared.m_attack.m_hitEffect = new EffectList()
+                {
+                    m_effectPrefabs = new EffectList.EffectData[]
+                    {
+                        new EffectList.EffectData()
+                        {
+                            m_prefab = himminaflAttack,
+                        }
+                    }
+                };
+            }
         }
 
         private void UpdateAllRecipes(bool updateItemsInScene = false)
         {
-            //IronJavelin.UpdateRecipe();
+            BladeOfShawesome.UpdateRecipe();
+            GreatswordOfShawesome.UpdateRecipe();
         }
 
         private void CreateConfigValues()
@@ -72,8 +117,8 @@ namespace ChebsModStub
                                              "which seem to give users with Radeon cards trouble for unknown " +
                                              "reasons. If you have problems with lag it might also help to switch" +
                                              "this setting on."));
-            //JavelinItem.CreateSharedConfigs(this);
-            //IronJavelin.CreateConfigs(this);
+            BladeOfShawesome.CreateConfigs(this);
+            GreatswordOfShawesome.CreateConfigs(this);
         }
 
         private void SetupWatcher()
@@ -107,22 +152,20 @@ namespace ChebsModStub
         private void LoadAssetBundle()
         {
             // order is important (I think): items, creatures, structures
-            var assetBundlePath = Path.Combine(Path.GetDirectoryName(Info.Location), "chebsmodstub");
+            var assetBundlePath = Path.Combine(Path.GetDirectoryName(Info.Location), "shawesome");
             var chebgonazAssetBundle = AssetUtils.LoadAssetBundle(assetBundlePath);
             try
             {
-                // {
-                //     var ironJavelinProjectilePrefab =
-                //         Base.LoadPrefabFromBundle(IronJavelin.ProjectilePrefabName, chebgonazAssetBundle,
-                //             RadeonFriendly.Value);
-                //     ironJavelinProjectilePrefab.GetComponent<Projectile>().m_gravity =
-                //         JavelinItem.ProjectileGravity.Value;
-                //     PrefabManager.Instance.AddPrefab(ironJavelinProjectilePrefab);
-                //
-                //     var ironJavelinPrefab = Base.LoadPrefabFromBundle(IronJavelin.PrefabName, chebgonazAssetBundle,
-                //         RadeonFriendly.Value);
-                //     ItemManager.Instance.AddItem(IronJavelin.GetCustomItemFromPrefab(ironJavelinPrefab));
-                // }
+                {
+                    var prefab = Base.LoadPrefabFromBundle(BladeOfShawesome.PrefabName, chebgonazAssetBundle,
+                        RadeonFriendly.Value);
+                    ItemManager.Instance.AddItem(BladeOfShawesome.GetCustomItemFromPrefab(prefab));
+                }
+                {
+                    var prefab = Base.LoadPrefabFromBundle(GreatswordOfShawesome.PrefabName, chebgonazAssetBundle,
+                        RadeonFriendly.Value);
+                    ItemManager.Instance.AddItem(GreatswordOfShawesome.GetCustomItemFromPrefab(prefab));
+                }
             }
             catch (Exception ex)
             {

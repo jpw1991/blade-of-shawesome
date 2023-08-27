@@ -4,7 +4,8 @@ DEBUGDIR=BladeOfShawesome/bin/Debug
 DLL=$DEBUGDIR/BladeOfShawesome.dll
 LIB=../chebs-valheim-library/ChebsValheimLibrary/bin/Release/ChebsValheimLibrary.dll
 BUN=../chebs-necromancy/ChebsNecromancyUnity/Assets/AssetBundles/shawesome
-PLUGINS=/home/$USER/.local/share/Steam/steamapps/common/Valheim/BepInEx/plugins
+#PLUGINS=/home/$USER/.local/share/Steam/steamapps/common/Valheim/BepInEx/plugins
+PLUGINS=/home/$USER/.config/r2modmanPlus-local/Valheim/profiles/cheb-development/BepInEx/plugins/ChebGonaz-BladeOfShawesome
 TRANSLATIONS=Translations
 
 # Check that source files exist and are readable

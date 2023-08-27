@@ -25,12 +25,16 @@ namespace BladeOfShawesome.Items
 
         public static ConfigEntry<float> Knockback,
             BackstabBonus,
+            Damage,
+            PierceDamage,
             SlashDamage,
             LightningDamage,
             FrostDamage,
             SpiritDamage,
             BluntDamage,
             FireDamage,
+            BonusDamagePerLevel,
+            BonusPierceDamagePerLevel,
             BonusSlashDamagePerLevel,
             BonusLightningDamagePerLevel,
             BonusFrostDamagePerLevel,
@@ -77,13 +81,21 @@ namespace BladeOfShawesome.Items
                     "GreatswordOfShawesome's base backstab value.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
 
+            Damage = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "Damage",
+                200f, new ConfigDescription(
+                    "BladeOfShawesome's base damage value.", null,
+                    new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            PierceDamage = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "PierceDamage",
+                40f, new ConfigDescription(
+                    "BladeOfShawesome's base pierce damage value.", null,
+                    new ConfigurationManagerAttributes { IsAdminOnly = true }));
             SlashDamage = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "SlashDamage",
-                140f, new ConfigDescription(
-                    "GreatswordOfShawesome's base slash damage value.", null,
+                40f, new ConfigDescription(
+                    "BladeOfShawesome's base slash damage value.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
             LightningDamage = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "LightningDamage",
                 50f, new ConfigDescription(
-                    "GreatswordOfShawesome's base spirit damage value.", null,
+                    "BladeOfShawesome's base spirit damage value.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
             FrostDamage = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "FrostDamage",
                 40f, new ConfigDescription(
@@ -101,15 +113,25 @@ namespace BladeOfShawesome.Items
                 60f, new ConfigDescription(
                     "Base damage value for Fire damage.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            BonusDamagePerLevel = plugin.Config.Bind($"{GetType().Name} (Server Synced)",
+                "BonusDamagePerLevel",
+                20f, new ConfigDescription(
+                    "BladeOfShawesome's damage increase per level.", null,
+                    new ConfigurationManagerAttributes { IsAdminOnly = true }));
+            BonusPierceDamagePerLevel = plugin.Config.Bind($"{GetType().Name} (Server Synced)",
+                "BonusPierceDamagePerLevel",
+                20f, new ConfigDescription(
+                    "BladeOfShawesome's pierce damage increase per level.", null,
+                    new ConfigurationManagerAttributes { IsAdminOnly = true }));
             BonusSlashDamagePerLevel = plugin.Config.Bind($"{GetType().Name} (Server Synced)",
                 "BonusSlashDamagePerLevel",
-                25f, new ConfigDescription(
-                    "GreatswordOfShawesome's slash damage increase per level.", null,
+                20f, new ConfigDescription(
+                    "BladeOfShawesome's slash damage increase per level.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
             BonusLightningDamagePerLevel = plugin.Config.Bind($"{GetType().Name} (Server Synced)",
                 "BonusLightningDamagePerLevel",
                 0f, new ConfigDescription(
-                    "GreatswordOfShawesome's spirit damage increase per level.", null,
+                    "BladeOfShawesome's spirit damage increase per level.", null,
                     new ConfigurationManagerAttributes { IsAdminOnly = true }));
             BonusFrostDamagePerLevel = plugin.Config.Bind($"{GetType().Name} (Server Synced)", "FrostDamage",
                 40f, new ConfigDescription(
@@ -186,8 +208,20 @@ namespace BladeOfShawesome.Items
             itemDataShared.m_backstabBonus = BackstabBonus.Value;
             itemDataShared.m_damages.m_slash = SlashDamage.Value;
             itemDataShared.m_damages.m_lightning = LightningDamage.Value;
+            itemDataShared.m_damages.m_frost = FrostDamage.Value;
+            itemDataShared.m_damages.m_spirit = SpiritDamage.Value;
+            itemDataShared.m_damages.m_blunt = BluntDamage.Value;
+            itemDataShared.m_damages.m_fire = FireDamage.Value;
+            itemDataShared.m_damages.m_damage = Damage.Value;
+            itemDataShared.m_damages.m_pierce = PierceDamage.Value;
             itemDataShared.m_damagesPerLevel.m_slash = BonusSlashDamagePerLevel.Value;
             itemDataShared.m_damagesPerLevel.m_lightning = BonusLightningDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_frost = BonusFrostDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_spirit = BonusSpiritDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_blunt = BonusBluntDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_fire = BonusFireDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_damage = BonusDamagePerLevel.Value;
+            itemDataShared.m_damagesPerLevel.m_pierce = BonusPierceDamagePerLevel.Value;
 
             #endregion
 

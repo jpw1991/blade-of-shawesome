@@ -54,7 +54,7 @@ if __name__ == '__main__':
         FilePatternReplacement('BladeOfShawesome/Properties/AssemblyInfo.cs',
                                'AssemblyFileVersion\\([".0-9]+\\)',
                                f'AssemblyFileVersion("{version}.0")'),
-        FilePatternReplacement('BladeOfShawesome/BladeOfShawesome.cs',
+        FilePatternReplacement('BladeOfShawesome/BasePlugin.cs',
                                'PluginVersion = [".0-9]+',
                                f'PluginVersion = "{version}"'),
         FilePatternReplacement('BladeOfShawesome/Package/manifest.json',

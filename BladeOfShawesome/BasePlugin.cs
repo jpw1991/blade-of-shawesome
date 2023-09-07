@@ -22,7 +22,7 @@ namespace BladeOfShawesome
     {
         public const string PluginGuid = "com.chebgonaz.bladeofshawesome";
         public const string PluginName = "BladeOfShawesome";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "0.0.2";
 
         private const string ConfigFileName = PluginGuid + ".cfg";
         private static readonly string ConfigFileFullPath = Path.Combine(Paths.ConfigPath, ConfigFileName);
@@ -98,6 +98,8 @@ namespace BladeOfShawesome
                         }
                     }
                 };
+                
+                itemDrop.m_itemData.m_shared.m_equipStatusEffect = ScriptableObject.CreateInstance<SE_Rested>();
             }
         }
 

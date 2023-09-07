@@ -1,7 +1,7 @@
 ﻿{
   "name": "BladeOfShawesome",
   "description": "to do",
-  "version_number": "0.0.1",
+  "version_number": "0.0.2",
   "website_url": "https://github.com/jpw1991/blade-of-shawesome",
   "dependencies": [
     "ValheimModding-Jotunn-2.11.2"

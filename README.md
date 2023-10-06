@@ -1,6 +1,6 @@
 # Blade of Shawesome
 
-The shawesomest Blade of Shawesome to ever grace Valheim.
+The shawesomest Blade of Shawesome to ever grace Valheim. I want to transfer ownership and maintenance of this mod over to Shawesome someday. **Warning:** This mod adds two insanely powerful, stupidly OP weapons.
 
 This mod was commissioned by Discord user: **Shawesome**. If you would like me to create a mod for you, please get in touch.
 
@@ -53,16 +53,16 @@ plugins/
 
 ## Features
 
-Detailed info in the [wiki](https://github.com/jpw1991/blade-of-shawesome/wiki). Here's the short version:
+Adds two weapons:
 
 - Blade of Shawesome
 	+ Crafted weapon.
-	+ Deals 100 slashing damage and 50 lightning damage.
+	+ Deals all kinds of damage, demolishes rocks and trees, OP/cheat weapon.
 	+ Can only be made during a thunderstorm.
 	+ One-handed sword.
 - Greatsword of Shawesome
 	+ Crafted weapon.
-	+ Deals 140 slashing damage and 50 lightning damage
+	+ Deals all kinds of damage, demolishes rocks and trees, OP/cheat weapon.
 	+ Can only be made during a thunderstorm.
 	+ Two-handed sword.
 
@@ -90,6 +90,7 @@ You can find the github [here](https://github.com/jpw1991/blade-of-shawesome).
 
  Date | Version | Notes 
 --- | --- | ---
+06/10/2023 | 1.1.0 | update for hildr's request & implement a bunch of stuff
 03/08/2023 | 1.0.0 | Release
 
 </details>
